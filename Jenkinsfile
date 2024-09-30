@@ -7,6 +7,7 @@ pipeline {
                 script {
                     echo 'Construyendo...'
                     // Aquí puedes añadir comandos para instalar dependencias
+                    sh 'apt install pip'
                     sh 'pip install -r requirements.txt' // Ejemplo
                     sh 'pip install pytest'
                 }
