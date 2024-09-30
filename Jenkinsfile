@@ -8,6 +8,7 @@ pipeline {
                     echo 'Construyendo...'
                     // Aquí puedes añadir comandos para instalar dependencias
                     sh 'pip install -r requirements.txt' // Ejemplo
+                    sh 'pip install pytest'
                 }
             }
         }
