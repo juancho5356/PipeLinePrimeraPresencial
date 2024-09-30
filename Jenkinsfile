@@ -7,9 +7,6 @@ pipeline {
                 script {
                     echo 'Construyendo...'
                     // Aquí puedes añadir comandos para instalar dependencias
-                    sh 'sudo apt install pip'
-                    sh 'pip install -r requirements.txt' // Ejemplo
-                    sh 'pip install pytest'
                 }
             }
         }
@@ -18,7 +15,6 @@ pipeline {
                 script {
                     echo 'Ejecutando pruebas...'
                     // Añade aquí los comandos para ejecutar pruebas
-                    sh 'pytest' // Ejemplo si usas pytest
                 }
             }
         }
