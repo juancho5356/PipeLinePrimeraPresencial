@@ -1,20 +1,33 @@
 pipeline {
-    agent any
-
+    agent {
+        docker {
+            image 'python:3.9'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
+    }
     stages {
         stage('Build') {
             steps {
-                echo 'Building......'
+                script {
+                    echo 'Construyendo...'
+                    // Aquí puedes añadir comandos para instalar dependencias si es necesario
+                }
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..........'
+                script {
+                    echo 'Ejecutando pruebas...'
+                    // Añade aquí los comandos para ejecutar pruebas
+                }
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
+                script {
+                    sh 'docker run -d --name mydb -e MYSQL_ROOT_PASSWORD=root mysql:latest'
+                    echo 'Contenedor levantado.'
+                }
             }
         }
     }
