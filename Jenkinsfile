@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    echo 'Construyendo...'
+                    echo 'Construyendo.....'
                     // Aquí puedes añadir comandos para instalar dependencias
                 }
             }
